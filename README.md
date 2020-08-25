@@ -5,6 +5,10 @@
 Office hours (T/TH 10:30-11:30am): https://asu.zoom.us/j/6549858433
 
 <hr>
+Github Student Pack : https://education.github.com/pack
+
+
+<hr>
 
 8/20, 8/25:
 [White Board](https://docs.google.com/presentation/d/1vE1LWjqlbSXKB4mjdO9mlonc7GuiiZDlDtLDTHVkTo8/edit?usp=sharing)
