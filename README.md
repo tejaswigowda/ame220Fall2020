@@ -10,5 +10,6 @@ Github Student Pack : https://education.github.com/pack
 
 <hr>
 
-8/20, 8/25:
+8/20 - 8/27:
 [White Board](https://docs.google.com/presentation/d/1vE1LWjqlbSXKB4mjdO9mlonc7GuiiZDlDtLDTHVkTo8/edit?usp=sharing)
+
