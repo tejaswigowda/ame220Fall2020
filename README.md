@@ -9,9 +9,12 @@ Github Student Pack : https://education.github.com/pack
 
 <hr>
 
-HTML Tutorial: w3schools.com/html/
-CSS Tutorial: w3schools.com/css/
-JS Tutorial: w3schools.com/js/
+HTML Tutorial: https://w3schools.com/html/
+
+CSS Tutorial: https://w3schools.com/css/
+
+JS Tutorial: https://w3schools.com/js/
+
 
 <hr>
 
