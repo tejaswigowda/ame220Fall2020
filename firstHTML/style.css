@@ -1,3 +1,15 @@
+
 p{
   color:purple;
+  /* color:magenta;*/
+}
+
+
+#addr{
+  background-color: red;
+  color:white;
+}
+
+.heading{
+  background-color: green;
 }
