@@ -7,6 +7,11 @@ Office hours (T/TH 10:30-11:30am): https://asu.zoom.us/j/6549858433
 <hr>
 Github Student Pack : https://education.github.com/pack
 
+<hr>
+
+HTML Tutorial: w3schools.com/html/
+CSS Tutorial: w3schools.com/css/
+JS Tutorial: w3schools.com/js/
 
 <hr>
 
