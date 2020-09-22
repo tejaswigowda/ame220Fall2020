@@ -1,4 +1,12 @@
-.heading{
+body{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Edward_Hopper%2C_Ground_Swell%2C_1939%2C_NGA_131206.jpg/2560px-Edward_Hopper%2C_Ground_Swell%2C_1939%2C_NGA_131206.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: 50%;
+  background-attachment:fixed;
+}
+
+#name.heading{
   color: rgb(0,0,0);
   text-align:center;
 }
