@@ -1,9 +1,19 @@
 body{
+  /*
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Edward_Hopper%2C_Ground_Swell%2C_1939%2C_NGA_131206.jpg/2560px-Edward_Hopper%2C_Ground_Swell%2C_1939%2C_NGA_131206.jpg);
   background-size: cover;
   background-repeat:no-repeat;
   background-position: 50%;
-  background-attachment:fixed;
+  background-attachment:fixed;*/
+  background-size: cover;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Edward_Hopper%2C_Ground_Swell%2C_1939%2C_NGA_131206.jpg/2560px-Edward_Hopper%2C_Ground_Swell%2C_1939%2C_NGA_131206.jpg) no-repeat 50% fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+#para{
+  color: blue;
+  background-color: gray;
+  display:block;
 }
 
 #name.heading{
@@ -23,10 +33,19 @@ body{
 }
 
 table{
-  border-width: 1px;
+  /*border-width: 1px;
   border-style: solid;
   border-color:black;
+  border-collapse: collapse;*/
   border-collapse: collapse;
+  border: solid 1px black;
+  width: 90%;
+/*
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5%;*/
+  margin: 10px 5% 10px 5%;
 }
 
 th, td{
