@@ -4,7 +4,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body onload='alert(1+3)' style='background-color:white'>
+<!--
   <button onclick='$("body").attr("style", "background-color:black")'> turn page black</button>
   <button onclick='$("body").attr("style", "background-color:white")'> turn page white</button>
+  -->
+
+  <button onclick='$("body").css("background-color","black")'> turn page black</button>
+  <button onclick='$("body").css("background-color","white")'> turn page white</button>
+
+
+
 </body>
+<style>
+  body{
+    transition:5s;
+  }
+  </style>
+
 </html>
