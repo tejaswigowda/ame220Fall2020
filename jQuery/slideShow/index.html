@@ -9,8 +9,8 @@
   <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Emu_1_-_Tidbinbilla.jpg/750px-Emu_1_-_Tidbinbilla.jpg'>
   <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Eurasian_coot_%28Fulica_atra%29_juvenile.jpg/900px-Eurasian_coot_%28Fulica_atra%29_juvenile.jpg'>
   <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Lilac-breasted_roller_%28Coracias_caudatus_caudatus%29_Botswana.jpg/900px-Lilac-breasted_roller_%28Coracias_caudatus_caudatus%29_Botswana.jpg'>
-  <button onclick='goPrev()'> Prev</button>
-  <button onclick='goNext()'> Next</button>
+  <button id='prev' onclick='goPrev()'> Prev</button>
+  <button id='next' onclick='goNext()'> Next</button>
 
 </body>
 <script>
@@ -40,4 +40,19 @@ function goToCurrentSlide(){
   $("img:nth-of-type(" + currentSlide + ")").stop().fadeIn();
 }
 </script>
+<style>
+  img{
+    position:absolute;
+  }
+  #prev{
+    position:fixed;
+    bottom: 5px;
+    left: 5px;
+  }
+  #next{
+    position:fixed;
+    bottom: 5px;
+    right: 5px;
+  }
+</style>
 </html>
