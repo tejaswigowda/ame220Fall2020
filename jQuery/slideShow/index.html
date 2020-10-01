@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body onload='start()'>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kleiber_Sitta_europaea-0447.jpg/900px-Kleiber_Sitta_europaea-0447.jpg'>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Emu_1_-_Tidbinbilla.jpg/750px-Emu_1_-_Tidbinbilla.jpg'>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Eurasian_coot_%28Fulica_atra%29_juvenile.jpg/900px-Eurasian_coot_%28Fulica_atra%29_juvenile.jpg'>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Lilac-breasted_roller_%28Coracias_caudatus_caudatus%29_Botswana.jpg/900px-Lilac-breasted_roller_%28Coracias_caudatus_caudatus%29_Botswana.jpg'>
+  <button onclick='goPrev()'> Prev</button>
+  <button onclick='goNext()'> Next</button>
+
+</body>
+<script>
+var currentSlide = 1;
+function start(){
+  goToCurrentSlide()
+}
+
+function goPrev(){
+  currentSlide = currentSlide - 1;
+  if(currentSlide <=0){
+    currentSlide = 4;
+  }
+  goToCurrentSlide()
+}
+
+function goNext(){
+  currentSlide = currentSlide + 1;
+  if(currentSlide >=5){
+    currentSlide = 1;
+  }
+  goToCurrentSlide()
+}
+
+function goToCurrentSlide(){
+  $("img").fadeOut()
+  $("img:nth-of-type(" + currentSlide + ")").stop().fadeIn();
+}
+</script>
+</html>
