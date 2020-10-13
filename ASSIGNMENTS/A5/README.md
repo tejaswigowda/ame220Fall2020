@@ -8,4 +8,4 @@ Pages(https://pages.github.com/)
 
 ## Submission
 Email your github page url:
-https://<username>.github.io
+https://username.github.io
