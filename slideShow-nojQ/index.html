@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body onload='start()'>
@@ -36,8 +35,19 @@ function goNext(){
 }
 
 function goToCurrentSlide(){
-  $("img").fadeOut()
-  $("img:nth-of-type(" + currentSlide + ")").stop().fadeIn();
+  var allImgObjs = document.getElementsByTagName("img");
+  var i = 0;
+  while(i < allImgObjs.length){
+    if(i == (currentSlide - 1)){
+      allImgObjs[i].style.display = "block";
+    }
+    else{
+      allImgObjs[i].style.display = "none";
+    }
+    i = i + 1;
+  }
+ // $("img").fadeOut()
+ // $("img:nth-of-type(" + currentSlide + ")").stop().fadeIn();
 }
 </script>
 <style>
