@@ -62,6 +62,12 @@ function goToCurrentSlide(){
  // $("img").fadeOut()
  // $("img:nth-of-type(" + currentSlide + ")").stop().fadeIn();
 }
+
+function goToSlide(n)
+{
+  currentSlide = n + 1;
+  goToCurrentSlide();
+}
 </script>
 <style>
   img{
