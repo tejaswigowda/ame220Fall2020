@@ -27,21 +27,21 @@ function start(){
 function goPrev(){
   currentSlide = currentSlide - 1;
   if(currentSlide <=0){
-    currentSlide = 4;
+    currentSlide = allImages.length;
   }
   goToCurrentSlide()
 }
 
 function goNext(){
   currentSlide = currentSlide + 1;
-  if(currentSlide >=5){
+  if(currentSlide >=(allImages.length+1)){
     currentSlide = 1;
   }
   goToCurrentSlide()
 }
 
 function goToCurrentSlide(){
-  var allImgObjs = document.getElementsByTagName("img");
+  var allImgObjs = document.getElementsByClassName("slide");
   var i = 0;
   while(i < allImgObjs.length){
     if(i == (currentSlide - 1)){
@@ -82,6 +82,8 @@ function goToCurrentSlide(){
     width: 100%;
     height: 100%;
     position:absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
   }
 </style>
 </html>
