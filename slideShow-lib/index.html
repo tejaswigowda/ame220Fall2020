@@ -4,9 +4,10 @@
 </head>
 
 <body onload='start()'>
-  <div id='imageWrapper'> </div>
+  <div id='imageWrapper'></div>
   <button id='prev' onclick='goPrev()'> Prev</button>
   <button id='next' onclick='goNext()'> Next</button>
+  <div id='numWrapper'></div>
 
 </body>
 <script>
@@ -20,6 +21,12 @@ function start(){
       markup += "<div class='slide' style='background-image:url(" + allImages[i] + ")'></div>";
   }
   document.getElementById("imageWrapper").innerHTML = markup;
+
+  markup = "";
+  for(var i=0;i<allImages.length;i++){
+      markup += "<button class='num' onclick='goToSlide(" + i + ")'>" + (i+1) + "</button>";
+  }
+  document.getElementById("numWrapper").innerHTML = markup;
 
   goToCurrentSlide()
 }
@@ -84,6 +91,13 @@ function goToCurrentSlide(){
     position:absolute;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+  }
+  #numWrapper{
+    position: fixed;
+    bottom: 5px;
+    text-align: center;
+    display: block;
+    width: 100%;
   }
 </style>
 </html>
