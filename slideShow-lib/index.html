@@ -9,7 +9,6 @@
   <div id='numWrapper'></div>
   <button id='prev' onclick='goPrev()'> Prev</button>
   <button id='next' onclick='goNext()'> Next</button>
-
 </body>
 <script>
 var currentSlide = 1;
@@ -53,10 +52,13 @@ function goToCurrentSlide(){
   var i = 0;
   while(i < allImgObjs.length){
     if(i == (currentSlide - 1)){
-      allImgObjs[i].style.display = "block";
+      allImgObjs[i].style.marginLeft = "0%"
+    }
+    else if(i < (currentSlide - 1)){
+      allImgObjs[i].style.marginLeft = "-100%";
     }
     else{
-      allImgObjs[i].style.display = "none";
+      allImgObjs[i].style.marginLeft = "100%";
     }
     i = i + 1;
   }
@@ -101,6 +103,7 @@ function goToSlide(n)
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:contain;
+    transition: 1s;
   }
   #numWrapper{
     position: fixed;
