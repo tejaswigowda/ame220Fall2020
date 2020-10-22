@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</head>
+
+<body onload='start()'>
+  <div id='imageWrapper'></div>
+  <div id='numWrapper'></div>
+  <button id='prev' onclick='goPrev()'> Prev</button>
+  <button id='next' onclick='goNext()'> Next</button>
+</body>
+<script>
+var currentSlide = 1;
+var allImages;
+function start(){
+  var data = window.location.hash.replace("#","");
+  allImages = data.split(",");
+  var markup = "";
+  for(var i=0;i<allImages.length;i++){
+      markup += "<div class='slide' style='background-image:url(" + allImages[i] + ")'></div>";
+  }
+  document.getElementById("imageWrapper").innerHTML = markup;
+
+  markup = "";
+  for(var i=0;i<allImages.length;i++){
+      markup += "<button class='num' onclick='goToSlide(" + i + ")'>" + (i+1) + "</button>";
+  }
+  document.getElementById("numWrapper").innerHTML = markup;
+
+  goToCurrentSlide()
+}
+
+function goPrev(){
+  currentSlide = currentSlide - 1;
+  if(currentSlide <=0){
+    currentSlide = allImages.length;
+  }
+  goToCurrentSlide()
+}
+
+function goNext(){
+  currentSlide = currentSlide + 1;
+  if(currentSlide >=(allImages.length+1)){
+    currentSlide = 1;
+  }
+  goToCurrentSlide()
+}
+
+function goToCurrentSlide(){
+  var allImgObjs = document.getElementsByClassName("slide");
+  var i = 0;
+  while(i < allImgObjs.length){
+    if(i == (currentSlide - 1)){
+      allImgObjs[i].style.marginLeft = "0%"
+    }
+    else if(i < (currentSlide - 1)){
+      allImgObjs[i].style.marginLeft = "-100%";
+    }
+    else{
+      allImgObjs[i].style.marginLeft = "100%";
+    }
+    i = i + 1;
+  }
+ // $("img").fadeOut()
+ // $("img:nth-of-type(" + currentSlide + ")").stop().fadeIn();
+ $(".num").removeClass("active");
+ $(".num:nth-of-type("+ currentSlide+ ")").addClass("active");
+}
+
+function goToSlide(n)
+{
+  currentSlide = n + 1;
+  goToCurrentSlide();
+}
+</script>
+<style>
+  img{
+    position:absolute;
+  }
+  #prev{
+    position:fixed;
+    bottom: 5px;
+    left: 5px;
+  }
+  #next{
+    position:fixed;
+    bottom: 5px;
+    right: 5px;
+  }
+  #imageWrapper{
+    width: 100%;
+    height: 90%;
+    position: fixed;
+  }
+  body{
+    margin:0;
+  }
+  .slide{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:contain;
+    transition: 1s;
+  }
+  #numWrapper{
+    position: fixed;
+    bottom: 5px;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+  .active{
+    background-color:gold;
+  }
+</style>
+</html>
