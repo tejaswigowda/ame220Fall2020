@@ -123,6 +123,8 @@ function updateClock(){
   document.getElementById("sec").style.transform = "rotate(" + sAng + "deg)";
   var mAng = (m - 15)*6;
   document.getElementById("min").style.transform = "rotate(" + mAng + "deg)";
+  var hAng = (h - 3)*30 + m*.5;
+  document.getElementById("hour").style.transform = "rotate(" + hAng + "deg)";
 
 
 
