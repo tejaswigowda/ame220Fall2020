@@ -121,6 +121,8 @@ function updateClock(){
   console.log(h,m,s)
   var sAng = (s - 15)*6;
   document.getElementById("sec").style.transform = "rotate(" + sAng + "deg)";
+  var mAng = (m - 15)*6;
+  document.getElementById("min").style.transform = "rotate(" + mAng + "deg)";
 
 
 
