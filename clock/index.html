@@ -110,6 +110,7 @@
 </body>
 <script>
 function start(){
+  updateClock();
   setInterval("updateClock()", 1000);
 }
 
@@ -125,9 +126,6 @@ function updateClock(){
   document.getElementById("min").style.transform = "rotate(" + mAng + "deg)";
   var hAng = (h - 3)*30 + m*.5;
   document.getElementById("hour").style.transform = "rotate(" + hAng + "deg)";
-
-
-
 }
 
 </script>
