@@ -16,6 +16,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background:white;
+  }
+  .darkmode{
+    filter: invert(1);
   }
   .num{
     width: 10px;
@@ -149,10 +153,18 @@ function start(){
 }
 
 function updateClock(){
-  var tzOffset = document.getElementById("DropDownTimezone").value;
-  console.log(tzOffset);
+  var tzOffset = parseFloat(document.getElementById("DropDownTimezone").value);
+  var currTZOffset =  new Date().getTimezoneOffset()/60;
+  console.log(tzOffset, currTZOffset);
 
-  var now = new Date();
+  if(isNaN(tzOffset)){
+    tzOffset = 0;
+    currTZOffset = 0;
+  }
+  var currTime = new Date().getTime() + ((currTZOffset + tzOffset)*60*60*1000);
+
+
+  var now = new Date(currTime);
   var h = now.getHours();
   var m = now.getMinutes();
   var s = now.getSeconds();
@@ -160,8 +172,15 @@ function updateClock(){
   document.getElementById("sec").style.transform = "rotate(" + sAng + "deg)";
   var mAng = (m - 15)*6;
   document.getElementById("min").style.transform = "rotate(" + mAng + "deg)";
-  var hAng = (h - 3)*30 + m*.5;
+  var hAng = (h%12 - 3)*30 + m*.5;
   document.getElementById("hour").style.transform = "rotate(" + hAng + "deg)";
+
+  if(h >6 && h < 18){
+    document.getElementById("clockWrapper").className = "";
+  }
+  else{
+    document.getElementById("clockWrapper").className = "darkmode";
+  }
 }
 
 </script>

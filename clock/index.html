@@ -124,8 +124,14 @@ function updateClock(){
   document.getElementById("sec").style.transform = "rotate(" + sAng + "deg)";
   var mAng = (m - 15)*6;
   document.getElementById("min").style.transform = "rotate(" + mAng + "deg)";
-  var hAng = (h - 3)*30 + m*.5;
+  var hAng = (h%12 - 3)*30 + m*.5;
   document.getElementById("hour").style.transform = "rotate(" + hAng + "deg)";
+  if(h >6 && h < 18){
+    document.getElementById("clockWrapper").className = "";
+  }
+  else{
+    document.getElementById("clockWrapper").className = "darkmode";
+  }
 }
 
 </script>
