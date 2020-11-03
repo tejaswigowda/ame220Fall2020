@@ -10,7 +10,7 @@
   function start(){
     var markup = "";
     for(var i = 0; i < myTZs.length;i++){
-      markup = "<iframe src='clock.html#" + myTZs[i] + "'></iframe>"
+      markup += "<iframe src='clock.html#" + myTZs[i] + "'></iframe>"
     }
     document.getElementById("tzList").innerHTML = markup;
   }
