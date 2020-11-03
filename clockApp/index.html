@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+  <script>
+  var myTZs = [
+    -7, -12, 6
+  ];
+
+  function start(){
+    var markup = "";
+    for(var i = 0; i < myTZs.length;i++){
+      markup = "<iframe src='clock.html#" + myTZs[i] + "'></iframe>"
+    }
+    document.getElementById("tzList").innerHTML = markup;
+  }
+  </script>
+</head>
+<body onload='start()'>
+  <div id='tzList'>
+  </div>
+</body>
+</html>
