@@ -17,13 +17,19 @@
     closeSettings();
   }
   function generateClockMU(){
-    var instance = M.FormSelect.getInstance(document.getElementById("DropDownTimezone"));
-    myTZs = instance.getSelectedValues();
+  //  var instance = M.FormSelect.getInstance(document.getElementById("DropDownTimezone"));
+  //  myTZs = instance.getSelectedValues();
+    myTZs = $("#DropDownTimezone option:selected")
 
 
-    var markup = "<iframe src='clock100.html#'></iframe>"
+
+    var markup = "<div class='oneTZ'><iframe src='clock100.html#'></iframe><p>Default</p></div>"
     for(var i = 0; i < myTZs.length;i++){
-      markup += "<iframe src='clock100.html#" + myTZs[i] + "'></iframe>"
+      markup += 
+        "<div class='oneTZ'>"+
+        "<iframe src='clock100.html#" + myTZs[i].value + "'></iframe>"+
+        "<p>" + myTZs[i].text + "</p>"+
+        "</div>"
     }
     document.getElementById("tzList").innerHTML = markup;
   }
