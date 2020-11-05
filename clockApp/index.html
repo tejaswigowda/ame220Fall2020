@@ -17,8 +17,6 @@
     closeSettings();
   }
   function generateClockMU(){
-  //  var instance = M.FormSelect.getInstance(document.getElementById("DropDownTimezone"));
-  //  myTZs = instance.getSelectedValues();
     myTZs = $("#DropDownTimezone option:selected")
     var markup = "<button onclick='tzSelected(-1)' class='oneTZ'><iframe src='clock100.html#'></iframe><p>Default</p></button>"
     for(var i = 0; i < myTZs.length;i++){
@@ -44,8 +42,13 @@
 
     $(".oneTZ").removeClass("selected");
     $(".oneTZ:nth-of-type(" + (n+2)+ ")").addClass("selected");
+    $("body").addClass("clockMode")
   }
 
+  function goBack(){
+    $("body").removeClass("clockMode")
+    $(".oneTZ").removeClass("selected");
+  }
 
   function closeSettings(){
     $("#settings").fadeOut();
@@ -61,8 +64,9 @@
   </div>
   <div id='theClock'>
   </div>
-    <a href='javascript:editTZs()' class="btn-floating btn-large waves-effect waves-light red" style='position:fixed;right:10px;top:10px;z-index:0'><i class="material-icons">create</i></a>
+    <a href='javascript:editTZs()' id='editButton' class="btn-floating btn-large waves-effect waves-light red" style='position:fixed;right:10px;top:10px;z-index:0'><i class="material-icons">create</i></a>
 
+    <a href='javascript:goBack()' id='backButton' class="btn-floating btn-large waves-effect waves-light red" style='position:fixed;left:10px;top:10px;z-index:0'><i class="material-icons">arrow_back</i></a>
 
   <div id='settings'>
     <a href='javascript:closeSettings()' class="btn-floating btn-large waves-effect waves-light red" style='position:fixed;right:10px;top:10px;z-index:99999999999'><i class="material-icons">close</i></a>
@@ -109,7 +113,7 @@
   }
   #tzList {
     width: 30vw;
-    height: 100vw;
+    height: 100vh;
     overflow-y:auto;
     background:gray;
   }
@@ -118,7 +122,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    height: 100vw;
+    height: 100vh;
   }
   #theClock h1{
     position: fixed;
@@ -154,12 +158,41 @@
   }
 
   #settings{
-  width: 100vw;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     background: white;
+  }
+  #backButton{
+    display:none; 
+  }
+  @media (max-width: 600px){
+    #tzList{
+      width: 100vw;
+    }
+    #theClock{
+      width: 100vw;
+      display:none;
+    }
+
+    .clockMode #tzList{
+      display: none;
+    }
+    .clockMode #theClock{
+      display: block;
+    }
+    .clockMode #backButton{
+      display:block;
+    }
+    .clockMode #editButton{
+      display:none;
+    }
+    #theClock h1{
+      width: 100vw;
+    }
+  
   }
 </style>
 </html>
