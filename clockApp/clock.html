@@ -115,14 +115,18 @@
 <script>
 var tzOffset = 0;
 function start(){
-  var hash = window.location.hash.replace("#","");
-  tzOffset = parseFloat(hash);
   updateClock();
   setInterval("updateClock()", 1000);
 }
 
 function updateClock(){
+  var hash = window.location.hash.replace("#","");
+  tzOffset = parseFloat(hash);
   var currTZOffset =  new Date().getTimezoneOffset()/60;
+  if(isNaN(tzOffset)){
+    tzOffset = 0;
+    currTZOffset = 0;
+  }
   var currTime = new Date().getTime() + ((currTZOffset + tzOffset)*60*60*1000);
   var now = new Date(currTime);
   var h = now.getHours();
