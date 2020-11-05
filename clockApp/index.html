@@ -56,6 +56,7 @@
   }
   function editTZs(){
     $("#settings").fadeIn();
+    $(".select-dropdown.dropdown-trigger").click()
   }
   </script>
 </head>
@@ -69,7 +70,7 @@
     <a href='javascript:goBack()' id='backButton' class="btn-floating btn-large waves-effect waves-light red" style='position:fixed;left:10px;top:10px;z-index:0'><i class="material-icons">arrow_back</i></a>
 
   <div id='settings'>
-    <a href='javascript:closeSettings()' class="btn-floating btn-large waves-effect waves-light red" style='position:fixed;right:10px;top:10px;z-index:99999999999'><i class="material-icons">close</i></a>
+    <a href='javascript:closeSettings()' class="btn-floating btn-large waves-effect waves-light blue" style='position:fixed;right:10px;top:10px;z-index:99999999999'><i class="material-icons">check</i></a>
     <select style='width:90%;margin-left:5%' multiple name="DropDownTimezone" id="DropDownTimezone">
       <option value="default" disabled>Default</option>
       <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
@@ -192,7 +193,11 @@
     #theClock h1{
       width: 100vw;
     }
-  
   }
+  .select-dropdown.dropdown-trigger
+  {
+    opacity:0;
+  }
+
 </style>
 </html>
