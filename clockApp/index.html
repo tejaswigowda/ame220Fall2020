@@ -33,10 +33,13 @@
   
   function tzSelected(n){
     var x = "";
+    var y = "Default";
     if(n > -1){
       x = "#" + myTZs[n].value;
+      y = myTZs[n].text
     }
-    var markup = "<iframe src='clock.html" + x + "'></iframe>";
+    var markup = "<iframe src='clock.html" + x + "'></iframe>"+
+       "<h1>" + y + "</h1>"
     document.getElementById("theClock").innerHTML = markup;
 
     $(".oneTZ").removeClass("selected");
@@ -117,6 +120,16 @@
     top: 0;
     height: 100vw;
   }
+  #theClock h1{
+    position: fixed;
+    width: calc(100% - 300px);
+    bottom: 0px;
+    right: 0px;
+    text-align:center;
+    font-weight:bold;
+    font-size: 16px;
+  }
+
   #theClock iframe{
     width: 100%;
     height: 100%;
