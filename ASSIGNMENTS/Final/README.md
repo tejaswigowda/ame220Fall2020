@@ -1,5 +1,5 @@
 # Final
-`Due Dec 3st, before midnight`
+`Due Dec 3rd, before midnight`
 
 ## Task
 
